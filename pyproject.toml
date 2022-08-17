@@ -7,6 +7,9 @@ license = "MIT License"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+biopython = "^1.79"
+squiggle = {git = "https://github.com/Benjamin-Lee/squiggle.git"}
+typer = "^0.6.1"
 
 [tool.poetry.dev-dependencies]
 isort = "^5.10.1"

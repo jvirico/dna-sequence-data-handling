@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "dna-sequence-data-handling"
+version = "0.1.0"
+description = "Testing python libraries for bioinformatics"
+authors = ["Javier Rico <jvirico@gmail.com>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.10.1"
+flake8 = "^5.0.4"
+mypy = "^0.971"
+pytest = "^7.1.2"
+black = "^22.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip_gitignore = true
+
+[tool.mypy]
+python_version = 3.8
+# uncomment if using (older) NumPy version
+# plugins = "numpy.typing.mypy_plugin"
+namespace_packages = true
+ignore_missing_imports = true
+show_error_codes = true
+show_column_numbers = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+local_partial_types = true
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_unreachable = true
+ignore_errors = false

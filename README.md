@@ -3,7 +3,7 @@ TBD
 ## DATA
 Data is in fasta format. We use Biopython to process it. The working example [pdb_seqres.txt](/tests/data/pdb_seqres.txt) has been downloaded from [2].
 
-## Encofing sequence data
+## Encoding sequence data
 Showcasting three approaches to encode sequence data:
 - Ordinal encoding DNA sequence
 - One-hot encoding DAN sequence

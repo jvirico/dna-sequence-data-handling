@@ -1,6 +1,7 @@
 import logging
 import re
 from pathlib import Path
+from typing import List
 
 import numpy as np
 import numpy.typing as npt
@@ -69,6 +70,10 @@ def one_hot_encoding(sequence_string: str) -> npt.NDArray[np.complex64]:
     return onehot_encoded
 
 
+def k_mer_counting(sequence_string: str, size: int) -> List[str]:
+    return [sequence_string[x: x + size].lower() for x in range(len(sequence_string) - size + 1)]
+
+
 def show_encodings(fasta_file_path: Path) -> None:
     try:
         all_sequences = SeqIO.parse(fasta_file_path, "fasta")
@@ -76,8 +81,10 @@ def show_encodings(fasta_file_path: Path) -> None:
             logger.info(" Ordinal encoding:\n")
             print(ordinal_encoding(str(sequence.seq)))
             logger.info(" One-hot encoding:\n")
-            one_hot_seq = one_hot_encoding(str(sequence.seq))
-            print(one_hot_seq)
+            print(one_hot_encoding(str(sequence.seq)))
+            logger.info(" k-mer encoding:\n")
+            print(k_mer_counting(str(sequence.seq), size=7))
+
     except AttributeError as e:
         print(f"An error happened: {e}")
 
